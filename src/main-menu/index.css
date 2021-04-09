@@ -1,0 +1,32 @@
+.main-menu-button {
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 3em;
+}
+
+.main-menu-div {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    height: 50%;
+    background-color: #faffad;
+    border-radius: 10%;
+}
+
+.main-menu-text-input {
+    position: absolute;
+    width: 60%;
+    height: 8%;
+    left: 10%;
+    font-size: 100%;
+}
+
+.main-menu-title-span {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 300%;
+}

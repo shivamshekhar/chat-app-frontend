@@ -1,0 +1,49 @@
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: rgb(156, 195, 231); /* Just to visualize the extent */
+}
+
+.chat-app-button-default {
+    border: 0;
+    line-height: 2.5em;
+    font-size: 1em;
+    background-color: #f04d0d;
+    border-radius: 0.8em;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: inset 0.2em 0.2em 0.3em rgba(255, 255, 255, .6),
+                inset -0.2em -0.2em 0.3em rgba(0, 0, 0, .6);
+}
+
+.chat-app-button-default:hover {
+    background-color: #f3a90a
+}
+
+.chat-app-button-default:active {
+    outline: 0;
+    box-shadow: inset -0.2em -0.2em 0.3em rgba(255, 255, 255, .6),
+                inset 0.2em 0.2em 0.3em rgba(0, 0, 0, .6);
+}
+
+.chat-app-button-default:focus {
+    outline: 0;
+}
+
+.chat-app-button-default:disabled {
+    background-color: #bda97d;
+    box-shadow: inset -0.2em -0.2em 0.3em rgba(255, 255, 255, .6),
+                inset 0.2em 0.2em 0.3em rgba(0, 0, 0, .6);
+}
+
+.m-2 {
+    margin: 20%;
+}
+
+.m-1 {
+    margin: 10%;
+}
