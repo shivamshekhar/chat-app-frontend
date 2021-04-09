@@ -1,0 +1,9 @@
+.chat-menu-div {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 60em;
+    height: 58em;
+    background-color: #faffad;
+    border-radius: 10%;
+}

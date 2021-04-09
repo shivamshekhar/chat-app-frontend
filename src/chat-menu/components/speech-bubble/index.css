@@ -1,0 +1,21 @@
+.speech-bubble-div {
+    height: fit-content;
+    width: fit-content;
+    max-width: 95%;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 1%;
+    word-wrap: break-word;
+}
+
+.speech-bubble-div-friend {
+    background-color: rgb(255, 161, 73);
+    margin-left: auto;
+    margin-right: 2%;
+    border-top-right-radius: 0em;
+}
+
+.speech-bubble-div-self {
+    background-color: rgb(168, 206, 62);
+    border-top-left-radius: 0em;
+}
