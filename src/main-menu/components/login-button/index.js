@@ -14,7 +14,7 @@ export default class LoginButton extends React.Component {
         <button
           type="submit"
           className="main-menu-button login-button m-2 chat-app-button-default"
-          name="Login"
+          name="login"
           disabled={this.props.isLoading}
         >
           {this.props.isLoading ? "..." : "Login"}

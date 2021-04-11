@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./index.css";
 import "../../index.css";
 import "../../../index.css";
@@ -13,10 +13,11 @@ export default class RegisterButton extends React.Component {
       <React.Fragment>
         <button
           className="main-menu-button register-button m-2 chat-app-button-default"
-          name="register-button"
-          onClick={this.props.onClick}
+          name="register"
+          type="submit"
+          disabled={this.props.isLoading}
         >
-          Register
+          {this.props.isLoading ? "..." : "Register"}
         </button>
       </React.Fragment>
     );
