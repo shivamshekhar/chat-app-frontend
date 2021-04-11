@@ -1,0 +1,24 @@
+.name-header-div {
+    display: flex;
+    flex-direction: row;
+    background-color: #017925;
+    position: relative;
+    top: 1em;
+    left: 3em;
+    width: 52em;
+    height: 5em;
+    border-radius: 3em;
+}
+
+.profile-text-div {
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    position: relative;
+    left: 25%;
+    top: 0%;
+    width: 30%;
+    height: 80%;
+    text-align: center;
+    line-height:300%;
+    font-size: 180%;
+}

@@ -1,0 +1,37 @@
+.friend-details-div {
+    display: flex;
+    background-color: #017925;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 8%;
+    border-radius: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.friend-details-div:hover {
+    background-color: #267fe6;
+}
+
+.friend-details-profile-avatar {
+    position: relative;
+    left : 3%;
+    top: 10%;
+    width: 20%;
+    height: 80%;
+    line-height: 250%;
+}
+
+.friend-details-name {
+    background-color: inherit;
+    color: white;
+    position: relative;
+    left: 10%;
+    top: 0%;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height:450%;
+    font-size: 100%;
+}

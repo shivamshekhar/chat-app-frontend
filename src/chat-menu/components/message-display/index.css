@@ -1,11 +1,11 @@
 .chat-div {
     display: flex;
     flex-direction: column-reverse;
-    position: absolute;
-    top: 5%;
-    left: 5%;
+    position: relative;
+    top: 2em;
+    left: 3em;
     width: 52em;
-    height: 47em;
+    height: 44em;
     background-color: #faffad;
     overflow-y: auto;
 }

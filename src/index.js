@@ -8,7 +8,7 @@ class Ui extends React.Component {
   render() {
     return (
       <div className="fullscreen">
-        <ChatMenu />
+        <MainMenu />
       </div>
     );
   }

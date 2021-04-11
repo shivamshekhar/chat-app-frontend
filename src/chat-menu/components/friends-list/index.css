@@ -1,0 +1,20 @@
+.friends-list-outer-div {
+    background-color: #faffad;
+    position: relative;
+    top: 3em;
+    left: 3em;
+    width: 21.5em;
+    height: 58em;
+    border-radius: 2em;
+}
+
+.friends-list-inner-div {
+    background-color: inherit;
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    width: 92%;
+    height: 94%;
+    border-radius: 2em;
+    overflow-y: scroll;
+}

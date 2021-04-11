@@ -4,7 +4,7 @@ const ENCRYPTION_ALGO = "AES-CBC";
 const ENCRYPTION_PASSWORD = "helloworld";
 const SALT = "salt";
 const KEY_SIZE = 32;
-const ITERATIONS = 100000;
+const ITERATIONS = 1000;
 const DELIMITER = "-";
 const HASH_ALGO = "sha256";
 

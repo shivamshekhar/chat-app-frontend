@@ -3,10 +3,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import cryptUtils from "../lib/cryptUtils";
 import ChatMenu from "../chat-menu";
-import LoginButton from './components/login-button';
-import RegisterButton from './components/register-button';
-import UserNameTextBox from './components/username-box';
-import PasswordTextBox from './components/password-box';
+import LoginButton from "./components/login-button";
+import RegisterButton from "./components/register-button";
+import UserNameTextBox from "./components/username-box";
+import PasswordTextBox from "./components/password-box";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import "../index.css";
@@ -14,6 +14,11 @@ import "../index.css";
 class MainMenu extends React.Component {
   constructor(props) {
     super(props);
+
+    this.chatMenuObj = {
+        sessionToken : null,
+        userName : null
+    };
 
     this.state = {
       error: null,
@@ -69,7 +74,10 @@ class MainMenu extends React.Component {
           password: passwordHash,
         },
       })
-        .then(() => {
+        .then((res) => {
+          this.chatMenuObj.sessionToken = res && res.data && res.data.sessionToken;
+          this.chatMenuObj.userName = userName;
+
           const state = { ...this.state, isLoading: false, isLogin: true };
           this.setState(state);
           return resolve();
@@ -97,7 +105,7 @@ class MainMenu extends React.Component {
     const state = { ...this.state, isLoading: true };
     this.setState(state);
     evt.preventDefault();
-    
+
     try {
       await this._login();
     } catch (err) {
@@ -108,7 +116,7 @@ class MainMenu extends React.Component {
 
   render() {
     return this.state.isLogin ? (
-      <ChatMenu />
+      <ChatMenu value={this.chatMenuObj} />
     ) : (
       <div className="main-menu-div">
         <form onSubmit={(evt) => this._submit(evt)}>
