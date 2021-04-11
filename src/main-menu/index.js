@@ -48,7 +48,7 @@ class MainMenu extends React.Component {
       const encryptedUserName = cryptUtils.encryptString(userName);
 
       axios({
-        baseURL: "http://localhost:4000",
+        baseURL: "http://13.232.13.223",
         url: "/auth/user/login",
         method: "POST",
         headers: {
@@ -91,7 +91,7 @@ class MainMenu extends React.Component {
       const encryptedUserName = cryptUtils.encryptString(userName);
 
       axios({
-        baseURL: "http://localhost:4000",
+        baseURL: "http://13.232.13.223",
         url: "/auth/user/create",
         method: "POST",
         headers: {

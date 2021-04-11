@@ -25,7 +25,7 @@ class ChatMenu extends React.Component {
   componentDidMount() {
     const encryptedUserName = cryptUtils.encryptString(this.userName);
     axios({
-      baseURL: "http://localhost:4000",
+      baseURL: "http://13.232.13.223",
       url: `/user/${encryptedUserName}/relation/friend`,
       method: "GET",
       headers: {
@@ -68,7 +68,7 @@ class ChatMenu extends React.Component {
       const friendName = cryptUtils.encryptString(this.state.chattingWith);
       const sessionToken = this.sessionToken;
       axios({
-        baseURL: "http://localhost:4000",
+        baseURL: "http://13.232.13.223",
         url: "/messaging/send",
         method: "POST",
         headers: {
@@ -108,7 +108,7 @@ class ChatMenu extends React.Component {
     const userName = cryptUtils.encryptString(this.userName);
 
     axios({
-      baseURL: "http://localhost:4000",
+      baseURL: "http://13.232.13.223",
       url: `/messaging/${userName}/poll`,
       method: "GET",
       headers: {
