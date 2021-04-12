@@ -16,6 +16,7 @@ class ChatMenu extends React.Component {
     this.userName = this.props.value.userName;
     this.friendsList = [];
     this.messages = {};
+    this.isLogin = this.props.value.isLogin;
     this.state = {
       unsentMessage: null,
       chattingWith: null,
@@ -48,6 +49,12 @@ class ChatMenu extends React.Component {
             err.response.data.error) ||
           "Some error occurred!";
         toast(errorMessage, { type: "error" });
+        const responseStatusCode = err && err.response && err.response.status;
+        if (responseStatusCode == 401 || responseStatusCode == 403) {
+          setTimeout(() => {
+            this.props.handleLogin(false, {});
+          }, 3000);
+        }
       });
   }
 
@@ -99,7 +106,16 @@ class ChatMenu extends React.Component {
               err.response.data &&
               err.response.data.error) ||
             "Some error occurred!";
-          toast(errorMessage, { type: "error" });
+          if (this.isLogin) {
+            toast(errorMessage, { type: "error" });
+          }
+          const responseStatusCode = err && err.response && err.response.status;
+          if (responseStatusCode == 401 || responseStatusCode == 403) {
+            this.isLogin = false;
+            setTimeout(() => {
+              this.props.handleLogin(false, {});
+            }, 3000);
+          }
         });
     }
   }
@@ -139,9 +155,15 @@ class ChatMenu extends React.Component {
           (err &&
             err.response &&
             err.response.data &&
-            err.response.data.error) ||
+            (err.response.data.error || err.response.data.message)) ||
           "Some error occurred!";
         toast(errorMessage, { type: "error" });
+        const responseStatusCode = err && err.response && err.response.status;
+        if (responseStatusCode == 401 || responseStatusCode == 403) {
+          setTimeout(() => {
+            this.props.handleLogin(false, {});
+          }, 3000);
+        }
       });
   }
 
@@ -168,6 +190,7 @@ class ChatMenu extends React.Component {
             onSubmit={this._sendMessage.bind(this)}
           />
         </div>
+        <ToastContainer />
       </div>
     );
   }

@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import cryptUtils from "../lib/cryptUtils";
-import ChatMenu from "../chat-menu";
 import LoginButton from "./components/login-button";
 import RegisterButton from "./components/register-button";
 import UserNameTextBox from "./components/username-box";
@@ -26,7 +25,6 @@ class MainMenu extends React.Component {
       name: null,
       password: null,
       isLoading: false,
-      isLogin: false,
     };
   }
 
@@ -64,7 +62,7 @@ class MainMenu extends React.Component {
             res && res.data && res.data.sessionToken;
           this.chatMenuObj.userName = userName;
 
-          const state = { ...this.state, isLoading: false, isLogin: true };
+          const state = { ...this.state, isLoading: false };
           this.setState(state);
           return resolve();
         })
@@ -137,6 +135,7 @@ class MainMenu extends React.Component {
     if (buttonPressed === "login") {
       try {
         await this._login();
+        this.props.handleLogin(true, this.chatMenuObj);
       } catch (err) {
         const errorMessage = (err && err.message) || "Some error occurred!";
         toast(errorMessage, { type: "error" });
@@ -152,9 +151,7 @@ class MainMenu extends React.Component {
   }
 
   render() {
-    return this.state.isLogin ? (
-      <ChatMenu value={this.chatMenuObj} />
-    ) : (
+    return (
       <div className="main-menu-div">
         <form onSubmit={(evt) => this._submit(evt)}>
           <span className="main-menu-title-span">Login</span>
