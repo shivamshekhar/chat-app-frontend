@@ -4,6 +4,7 @@ A frontend client for my [chat app (server)](https://github.com/shivamshekhar/ch
 ## Prerequisites
 
 * Make sure [NodeJS v12.x](https://nodejs.org/) is installed  along with [npm (node package manager)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* Ensure the [server for this chat app](https://github.com/shivamshekhar/chat-app-backend), is up and running successfully.
 
 ## Getting started
 
